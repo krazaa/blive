@@ -9,31 +9,31 @@ class FpvideosController extends Controller
 {
     public function index()
     {
-    	$fpv = Fpvideos::all();
+    	$fpvbe = Fpvideos::all();
 
-    	return view('backend.fpvideos.index', compact('fpv'));
+    	return view('backend.fpvideos.index', compact('fpvbe'));
     }
 
     public function edit($id)
     {
-    	$fpv = Fpvideos::find($id);
+    	$fpvbe = Fpvideos::find($id);
 
-    	return view('backend.fpvideos.edit', compact('fpv'));
+    	return view('backend.fpvideos.edit', compact('fpvbe'));
     }
 
      public function update(Request $request, $id)
     {
-    	$fpv = Fpvideos::find($id);
+    	$fpvbe = Fpvideos::find($id);
 
-    	$fpv->update($request->all());
+    	$fpvbe->update($request->all());
 
     	return redirect()->route('fpv.index');
     }
 
      public function destroy($id)
     {        
-           $fpv= Fpvideos::findOrFail($id);
-           $fpv->delete();
+           $fpvbe= Fpvideos::findOrFail($id);
+           $fpvbe->delete();
 
         return redirect()->route('fpv.index');
     }

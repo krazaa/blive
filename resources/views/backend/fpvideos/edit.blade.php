@@ -14,21 +14,21 @@
                         </div>
                     @endif
                     
-                   <form action="{{ route('fpv.update', $fpv->id) }}" method="POST">
+                   <form action="{{ route('fpv.update', $fpvbe->id) }}" method="POST">
                     @csrf
                     @method('PUT')
                   <div class="form-group">
                     <label for="email">Title</label>
-                    <input type="text" class="form-control" id="title" name="title" value="{{ $fpv->title }}">
+                    <input type="text" class="form-control" id="title" name="title" value="{{ $fpvbe->title }}">
                   </div>
                   <div class="form-group">
                     <label for="email">Description</label>
-                    <input type="text" class="form-control" id="description" name="description" value="{{ $fpv->description }}">
+                    <input type="text" class="form-control" id="description" name="description" value="{{ $fpvbe->description }}">
                   </div>
 
                   <div class="form-group">
                     <label for="email">Video Link</label>
-                    <input type="text" class="form-control" id="ytlink" name="ytlink" value="{{ $fpv->ytlink }}">
+                    <input type="text" class="form-control" id="ytlink" name="ytlink" value="{{ $fpvbe->ytlink }}">
                   </div>
                   <button class="btn btn-primary">Update</button>
                   

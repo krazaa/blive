@@ -16,12 +16,12 @@
                         <thead>
                             <th>#</th>
                             <th>Title</th>
-                            <th>Description</th>
+                            <th>Description</th> 
                             <th>Youtube Video</th>
                             <th colspan="2">Action</th>
                         </thead>
                         <tbody>
-                            @foreach ($fpv as $key => $v)
+                            @foreach ($fpvbe as $key => $v)
                             <tr>
                                 <td>{{ ++$key }}</td>
                                 <td>{{ $v->title }}</td>
