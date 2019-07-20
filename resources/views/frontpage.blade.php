@@ -68,7 +68,7 @@
 	<!-- end footer top -->
 
 	<!-- clients say -->
-	@include('homepage.clientssay')
+	@include('homepage.certificates')
 	<!-- end clients say -->
 
 </div>

@@ -4857,7 +4857,7 @@ body.device-touch.device-xs .portfolio-notitle .portfolio-overlay { display: non
 .iportfolio .portfolio-image img {
 	display: block;
 	width: 100%;
-	height: auto;
+	/*height: auto;*/
 }
 
 .iportfolio .portfolio-overlay { height: 100% !important; }

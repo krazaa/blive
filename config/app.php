@@ -179,6 +179,7 @@ return [
         App\Providers\configServiceProvider::class,
         App\Providers\PackagesServiceProvider::class,
         App\Providers\NewsServiceProvider::class,
+        App\Providers\CertificatesServiceProvider::class,
         
         /*
          * Application Service Providers...

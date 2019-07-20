@@ -47,6 +47,7 @@ Route::group( [ 'prefix' => 'admin' ], function(){
 	Route::resource('/pages', 'PagesController');
 	Route::resource('/news', 'NewsController');
 	Route::resource('/faqs', 'FaqsController');
+	Route::resource('/certificates', 'CertificatesController');
 	
    
 });

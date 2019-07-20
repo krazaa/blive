@@ -18,39 +18,19 @@
 
 <div class="col_one_third">
 <div class="widget widget_links clearfix">
-	<h4>Blogroll</h4>
-	<ul>
-		<li><a href="http://codex.wordpress.org/">Documentation</a></li>
-		<li><a href="http://wordpress.org/support/forum/requests-and-feedback">Feedback</a></li>
-		<li><a href="http://wordpress.org/extend/plugins/">Plugins</a></li>
-		<li><a href="http://wordpress.org/support/">Support Forums</a></li>
-		<li><a href="http://wordpress.org/extend/themes/">Themes</a></li>
-		
+	<h4>Packages</h4>
+	<ul>@foreach ($packagse as $package)
+		<li><a href="{{ route('package', $package->id) }}">{{ $package->title }}</a></li>
+		@endforeach
 	</ul>
 </div>
 </div>
 <div class="col_one_third col_last">
-<div class="widget clearfix">
-	<h4>Recent Posts</h4>
-	<div id="post-list-footer">
-		<div class="spost clearfix">
-			<div class="entry-c">
-				<div class="entry-title">
-					<h4><a href="#">Lorem ipsum dolor sit amet, consectetur</a></h4>
-				</div>
-				
-			</div>
-		</div>
-		<div class="spost clearfix">
-			<div class="entry-c">
-				<div class="entry-title">
-					<h4><a href="#">Elit Assumenda vel amet dolorum quasi</a></h4>
-				</div>
-				
-			</div>
-		</div>
-		
-	</div>
+<div class="widget widget_links clearfix">
+	<h4>New Ranks System</h4>
+	<a href="{{ route('ranks', 1) }}">
+	<img alt="" src="http://bl4u:8888/photos/1/new_ranks.jpg" style="float:left; margin:10px; width:180px">
+	</a>
 </div>
 </div>
 </div>
