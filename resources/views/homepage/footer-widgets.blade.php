@@ -5,13 +5,11 @@
 				<div style="background: url('images/world-map.png') no-repeat center center; background-size: 100%;">
 					<address>
 						<strong>Headquarters:</strong><br>
-						F-9 Defence View  Phase 2 <br>
-					Near Iqra University, </br>
-					Karachi 75500, Pakistan
+						{!! $config->address !!}
 					</address>
-				<abbr title="Phone Number"><strong>Phone:</strong></abbr> 92 300 1234567<br>
-			<abbr title="Fax"><strong>Fax:</strong></abbr> 92 300 1234567<br>
-		<abbr title="Email Address"><strong>Email:</strong></abbr> info@businesslive4u.com 
+				<abbr title="Phone Number"><strong>Phone:</strong></abbr> {{ $config->contact }}<br>
+			<abbr title="Fax"><strong>Fax:</strong></abbr>  {{ $config->fax }}<br>
+		<abbr title="Email Address"><strong>Email:</strong></abbr>  {{ $config->email }}
 	</div>
 </div>
 </div>

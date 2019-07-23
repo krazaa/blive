@@ -22,6 +22,7 @@
 								<li><a href="{{ route('page', "What we do") }}"><div>What we do?</div></a></li>
 						</ul>
 					</li>
+					 @auth
 					<li><a href="#"><div>Packages</div></a>
 						<ul>
 				@foreach ($packagse as $package)
@@ -33,6 +34,7 @@
 				</li>
 				<li class="mega-menu"><a href="{{ route('ranks', 1) }}"><div>Ranks</div></a>
 			</li>
+			@endauth
 			<li><a href="#"><div>Our Projects</div></a>
 				<ul>
 					@foreach ($projects as $project)

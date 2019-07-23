@@ -1,6 +1,6 @@
 <div class="container clearfix">
 	<div class="heading-block center">
-		<h3>Our <span>Certificates</span></h3>
+		<h3>Our <span>Registrations</span></h3>
 	</div>
 	<div id="oc-portfolio" class="owl-carousel portfolio-carousel portfolio-nomargin carousel-widget" data-margin="1" data-pagi="false" data-autoplay="5000" data-items-xs="1" data-items-sm="2" data-items-md="3" data-items-xl="4">
 		@foreach ($fpc as $fpc)

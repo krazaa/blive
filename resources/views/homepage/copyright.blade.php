@@ -24,7 +24,7 @@ Copyrights &copy; 2019 All Rights Reserved by Business Live 4 U.<br>
 	</a>
 </div>
 <div class="clear"></div>
-<i class="icon-envelope2"></i> info@businesslive4u.com <span class="middot">&middot;</span> <i class="icon-headphones"></i> +92 300 1234567 <span class="middot">&middot;</span> <i class="icon-skype2"></i> Businesslive4u
+<i class="icon-envelope2"></i> {{ $config->email }} <span class="middot">&middot;</span> <i class="icon-headphones"></i> {{ $config->contact }} <span class="middot">&middot;</span> <i class="icon-skype2"></i> {{ $config->skype }} 
 </div>
 </div>
 </div>

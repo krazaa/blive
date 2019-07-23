@@ -2,25 +2,27 @@
 <div id="top-bar">
 	<div class="container clearfix">
 		<div class="col_half nobottommargin">
-			<!-- Top Links ============================================= -->
+			<!-- Top Links  -->
 			<div class="top-links">
 				<ul>
 					<li><a href="{{ url('faqs') }}">FAQs</a></li>
 					<li><a href="{{ url('contact') }}">Contact</a></li>
+					@guest
 					<li><a href="#">Login</a>
 					<div class="top-link-section">
-						<form id="top-login">
+						<form id="top-login" method="POST" action="{{ route('mlogin') }}">
+							@csrf
 							<div class="input-group" id="top-login-username">
 								<div class="input-group-prepend">
 									<div class="input-group-text"><i class="icon-user"></i></div>
 								</div>
-								<input type="email" class="form-control" placeholder="Email address" required="">
+								<input type="email" class="form-control" placeholder="Email address" name="email" required="">
 							</div>
 							<div class="input-group" id="top-login-password">
 								<div class="input-group-prepend">
 									<div class="input-group-text"><i class="icon-key"></i></div>
 								</div>
-								<input type="password" class="form-control" placeholder="Password" required="">
+								<input type="password" name="password" class="form-control" placeholder="Password" required="">
 							</div>
 							<label class="checkbox">
 								<input type="checkbox" value="remember-me"> Remember me
@@ -29,6 +31,20 @@
 						</form>
 					</div>
 				</li>
+				@endguest
+				@auth
+				<li><a href="{{ url('members') }}">Member Area</a></li>
+				<li>
+					<a href="{{ route('logout') }}"
+						onclick="event.preventDefault();
+						document.getElementById('logout-form').submit();">
+						{{ __('Logout') }}
+					</a>
+					<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+						@csrf
+					</form>
+				</li>
+				@endauth
 			</ul>
 		</div>
 		<!-- .top-links end -->

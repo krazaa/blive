@@ -39,8 +39,15 @@
                     <label for="mobile">Mobile</label>
                        <input type="text" class="form-control" id="mobile" name="mobile">
                        <input type="hidden" class="form-control" id="password" name="password" value="Password@321">
+                  </div>        <div class="form-group">
+                    <label for="mobile">Select Package</label>
+                        <select name="rp" class="form-control">
+                                  <option selected disabled>Select one</option>
+                                 @foreach ($packages as $package)
+                                 <option value="{{ $package->id }}">{{ $package->title }}</option>
+                                 @endforeach
+                               </select>
                   </div>
-
                   
                   <button class="btn btn-primary">Save</button>
                   

@@ -20,7 +20,6 @@ Route::get('/', function () {
 });
 
 
-
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -34,9 +33,11 @@ Route::get('/faqs', 'frontend\FaqsController@index')->name('faqs');
 Route::get('/contact', 'backend\ContactController@create')->name('contact');
 Route::post('/contact', 'backend\ContactController@store')->name('contact');
 
-Route::group( [ 'prefix' => 'admin' ], function(){
 
-	Route::resource('/settings', 'admin\SettingController');
+Route::group(['prefix' => 'admin', 'middleware' => ['role:superadministrator|administrator']], function() {
+    Route::get('/', 'AdminController@welcome');
+    Route::get('/members/list', 'MembersController@MembersList')->name('admin.members.list');
+    Route::resource('/settings', 'admin\SettingController');
 	Route::resource('/fpv', 'FpvideosController');
 	Route::resource('/slider', 'SliderController');
 	Route::resource('/members', 'MembersController');
@@ -48,8 +49,17 @@ Route::group( [ 'prefix' => 'admin' ], function(){
 	Route::resource('/news', 'NewsController');
 	Route::resource('/faqs', 'FaqsController');
 	Route::resource('/certificates', 'CertificatesController');
-	
-   
+
+});
+
+Route::post('/mlogin', 'Auth\MembersController@login')->name('mlogin');
+
+Route::group(['prefix' => 'members', 'middleware' => ['role:user']], function() {
+  Route::get('/', 'members\MembersController@welcome');
+  Route::post('/login', 'Auth\MembersController@login')->name('members.login.submit');
+  Route::post('/memberupdate', 'members\MembersController@memberupdate')->name('members.memberupdate.submit');
+  Route::get('/members/logout', 'Auth\MembersController@logout')->name('members.logout');
+  
 });
 
 Route::get('newsletter',['uses'=>'NewsLetterController@create', 'as'=>'newsletter']);
